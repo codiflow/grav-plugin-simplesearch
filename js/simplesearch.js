@@ -25,7 +25,8 @@
             event.preventDefault();
 
             if (field.checkValidity()) {
-                window.location.href = location + separator + field.value;
+                field.value = field.value.replace('/', '');
+                window.location.href = location + separator + encodeURIComponent(field.value);
             }
         });
     });
